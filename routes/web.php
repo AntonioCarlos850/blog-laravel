@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::namespace('Site')->group(function() {
+    Route::get('/','HomeController');
 
-Route::get('/', function () {
-    return view('welcome');
+    Route::get('/post/{slug}','PostController');
+
+    Route::view('sobre','site.about.index');
+
+    Route::get('contato','ContactController@index');
+    Route::post('contato','ContactController@send');
 });
