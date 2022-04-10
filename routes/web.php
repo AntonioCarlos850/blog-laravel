@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::namespace('Site')->group(function() {
-    Route::get('/','HomeController');
+    Route::get('/','HomeController')->name('index');
 
-    Route::get('/post/{slug}','PostController');
+    Route::get('/post/{slug}','PostController')->name('post');
 
-    Route::view('sobre','site.about.index');
+    Route::view('sobre','site.about.index')->name('about');
 
-    Route::get('contato','ContactController@index');
-    Route::post('contato','ContactController@send');
+    Route::get('contato','ContactController@index')->name('contact');
+    Route::post('contato','ContactController@form')->name('contact.form');
 });

@@ -1,1 +1,4 @@
-teste de home
+@extends('layouts.site')
+@section('content')
+bora
+@endsection
