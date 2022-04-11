@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('Site')->group(function() {
     Route::get('/','HomeController')->name('index');
 
+    // Route::get('categorias','CategoryController')->name('category');
+
     Route::get('/post/{slug}','PostController')->name('post');
 
     Route::view('sobre','site.about.index')->name('about');

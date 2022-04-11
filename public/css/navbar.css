@@ -1,0 +1,42 @@
+nav{
+    width: 100vw;
+}
+
+nav div{
+    width: 100%;
+}
+
+nav div ul{
+    width: 100%;
+    padding: .3rem 1.2rem;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--very-dark-gray);
+}
+
+nav div ul li{
+    list-style:none;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    min-width: 9.375rem;
+}
+
+nav div ul li a{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+nav div ul li a:hover{
+    text-decoration: underline;
+    text-underline-offset: 1px;
+    color: var(--red);
+}
