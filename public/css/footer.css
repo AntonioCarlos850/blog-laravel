@@ -1,6 +1,6 @@
 footer{
     height: 10vh;
-    width: 100vw;
+    width: 100%;
     background-color: var(--very-dark-gray);
 }
 
@@ -21,11 +21,6 @@ ul li{
     display: flex;
     text-align: center;
     align-items: center;
-    min-width: 7.5rem;
-}
-
-ul li div{
-    min-width: 7rem;
 }
 
 ul li a{
@@ -42,4 +37,14 @@ ul li a:hover{
     text-decoration: underline;
     text-underline-offset: 1px;
     color: var(--red);
+}
+
+@media screen and (min-width: 1000px){
+    ul li{
+        min-width: 7.5rem;
+    }
+    
+    ul li div{
+        min-width: 7rem;
+    }
 }

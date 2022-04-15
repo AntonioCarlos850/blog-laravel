@@ -1,5 +1,5 @@
 nav{
-    width: 100vw;
+    width: 100%;
 }
 
 nav div{
@@ -21,7 +21,6 @@ nav div ul li{
     display: flex;
     text-align: center;
     align-items: center;
-    min-width: 9.375rem;
 }
 
 nav div ul li a{
@@ -39,4 +38,19 @@ nav div ul li a:hover{
     text-decoration: underline;
     text-underline-offset: 1px;
     color: var(--red);
+}
+
+@media screen and (min-width: 1000px){
+    nav div ul li{
+        min-width: 9.375rem;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    nav div ul{
+        display: none;
+        width: 0;
+        margin: 0;
+        padding: 0;
+    }
 }

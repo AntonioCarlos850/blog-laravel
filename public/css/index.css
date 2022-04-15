@@ -1,25 +1,75 @@
 header{
-    height: 17.5rem;
+    height: 15.5rem;
     width: 100%;
     background: url("../image/index-header.jpeg") no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 h1{
     position: absolute;
     width: fit-content;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     right: 5%;
     top: 25%;
     color: var(--black);
 }
 
-.cards{
+h2{
+   font-size: 2.5rem;
+   margin-top: 1rem;
+}
+
+.card-1{
     background-color: var(--gray);
 }
 
-.cards h3{
-    font-size: 1.5rem;
+.card-1 .card-post{
+    background-color: var(--light-gray);
+}
+
+.card-2{
+    background-color: var(--light-gray);
+}
+
+.card-2 .card-post{
+    background-color: var(--white);
+}
+
+.cards a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cards a:hover{
+    animation: shake 1.5s infinite;
+}
+
+.card-post{
+    border-radius: 3px;
+    padding: .8rem;
+    text-align: justify;
+}
+
+.card-post h3{
+    font-size: 1.4rem;
+    margin-top: .4rem;
     color: var(--black);
+}
+
+.card-post img{
+    width: 75%;
+}
+
+@keyframes shake{
+    0%{
+        transform: translate(0,0px);
+    }
+    50%{
+        transform: translate(0,-4px);
+    }
+    100%{
+        transform: translate(0,0px);
+    }
 }

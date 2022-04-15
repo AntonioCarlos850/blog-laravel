@@ -1,0 +1,53 @@
+header{
+    height: 15.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url("../image/contact-header.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1{
+    width: fit-content;
+    text-align: center;
+    text-shadow: 0 0 4px var(--yellow);
+    font-size: 4rem;
+    color: var(--white);
+}
+
+h2{
+    width: fit-content;
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--black);
+    font-weight: 700;
+    margin-bottom: .4rem;
+}
+
+p{
+    text-align: justify;
+    font-size: 1.2rem;
+    color: var(--black);
+}
+
+.botao{
+    margin-top: 1.5rem;
+}
+
+button{
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--white);
+    padding: 5px 7px;
+    background-color: var(--red);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+button:hover{
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.2);
+}
