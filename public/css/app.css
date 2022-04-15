@@ -48,6 +48,11 @@ body{
     width: 100%;
 }
 
+#content-panel{
+    min-height: 80vh;
+    width: 100%;
+}
+
 .row{
     display: flex;
     flex-wrap: wrap;

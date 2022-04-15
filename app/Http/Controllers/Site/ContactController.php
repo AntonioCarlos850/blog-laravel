@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ContactFormRequest;
 use App\Models\Contact;
-use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
@@ -18,9 +18,10 @@ class ContactController extends Controller
         return view('site.contact.index');
     }
 
-    public function form(Request $request)
+    public function create(ContactFormRequest $request)
     {
-        $contact = Contact::create($request->all());
-        ddd($contact);
+        Contact::create($request->all());
+        
+        return redirect()->route('contact')->with('success','Formulário enviado com sucesso');
     }
 }

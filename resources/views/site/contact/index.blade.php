@@ -15,14 +15,29 @@
 <div class="row w-100 center p-2">
     <div class="row" id="internal-div">
         <form action="{{route('contact.form')}}" method="POST" class="row center direction-column p-1 col-6" id="form-contact">
+            @csrf
+            @if(session('success'))
+                <div>
+                    {{session('success')}}
+                </div>
+            @endif
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
+            <input type="email" name="email" id="email" value="{{old('email')}}" required>
+            @error('email')
+                <div>{{ $message }}</div>
+            @enderror
     
             <label for="name">Nome</label>
-            <input type="text" name="name" id="name" autocomplete="off" required>
+            <input type="text" name="name" id="name" autocomplete="off" value="{{old('name')}}" required>
+            @error('text')
+                <div>{{ $message }}</div>
+            @enderror
             
             <label for="input-content">Mensagem</label>
-            <textarea name="content" id="input-content" cols="30" rows="10"></textarea>
+            <textarea name="content" id="input-content" cols="30" rows="10">{{old('content')}}</textarea>
+            @error('content')
+                <div>{{ $message }}</div>
+            @enderror
     
             <button type="submit">Enviar</button>
         </form>

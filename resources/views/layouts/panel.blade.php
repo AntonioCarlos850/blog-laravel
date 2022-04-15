@@ -11,13 +11,12 @@
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
-    <link rel="stylesheet" href="{{asset('css/footer.css')}}">
 
     @stack('styles')
     @stack('scripts')
 
     <link rel="preload" onload="this.rel='stylesheet'" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Blog | @stack('pagina')</title>
+    <title>Painel | @stack('pagina')</title>
 </head>
 <body>
     <nav>
@@ -27,36 +26,13 @@
                     <a href="{{route('index')}}"><img width="150px" src="{{asset('image/logo-crow.svg')}}" alt="logo escrito agência crow"></a>
                 </li>
                 <li>
-                    <a href="#">Categorias</a>
-                </li>
-                <li>
-                    <a href="{{route('contact')}}">Contato</a>
-                </li>
-                <li>
-                    <a href="{{route('about')}}">Sobre</a>
+                    <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <div id ='content'>
+    <div id ='content-panel'>
         @yield('content')
     </div>
-    <footer>
-        <ul>
-            <li>
-                <a href="{{route('about')}}">Sobre</a>
-            </li>
-            <li>
-                <a href="{{route('contact')}}">Contato</a>
-            </li>
-            <li>
-                Redes Sociais:
-                <div class="row space-between px-1">
-                    <a href="https://www.instagram.com/agenciacrow/"><img src="{{asset('image/instagram-logo.png')}}" width="30px" alt="logo instagram"></a>
-                    <a href="https://www.facebook.com/agenciacrow/"><img src="{{asset('image/facebook-icon.png')}}" width="30px" alt="logo facebook"></a>
-                </div>
-            </li>
-        </ul>
-    </footer>
 </body>
 </html>
