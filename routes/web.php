@@ -24,13 +24,16 @@ Route::namespace('Site')->group(function() {
     Route::get('contato','ContactController@index')->name('contact');
     Route::post('contato','ContactController@create')->name('contact.form');
 
+    Route::get('login','UserController@login')->name('login');
+    Route::post('login','UserController@authenticate')->name('authenticate');
+    Route::get('logout','UserController@logout')->name('logout');
     /*=========================PAINEL=====================*/
 
-    Route::get('/painel','PanelController')->name('painel');
+    Route::get('/painel','PanelController')->name('painel')->middleware('auth');
 
-    Route::get('/painel/posts','PostController@panelIndex')->name('posts.panel');
-    Route::get('/painel/categories','CategoryController@panelIndex')->name('category.panel');
-    Route::get('/painel/tags','TagController@panelIndex')->name('tag.panel');
+    Route::get('/painel/posts','PostController@panelIndex')->name('posts.panel')->middleware('auth');
+    Route::get('/painel/categories','CategoryController@panelIndex')->name('category.panel')->middleware('auth');
+    Route::get('/painel/tags','TagController@panelIndex')->name('tag.panel')->middleware('auth');
 
-    Route::get('/painel/post/{slug}','PostController@panelPost')->name('post.panel');
+    Route::get('/painel/post/{slug}','PostController@panelPost')->name('post.panel')->middleware('auth');
 });

@@ -26,7 +26,7 @@
                     <a href="{{route('index')}}"><img width="150px" src="{{asset('image/logo-crow.svg')}}" alt="logo escrito agência crow"></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+                    <a href="{{route('logout')}}"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
                 </li>
             </ul>
         </div>
