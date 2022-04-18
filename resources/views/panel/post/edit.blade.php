@@ -25,8 +25,11 @@
             </div>
         @endif
         <div class="col-10 p-1 row center">
-            <form class="col-dt-7 col-mb-9 row direction-column center p-1" action="{{route('post.form', ['id'=>$post->id] )}}" method="POST">
+            <form class="col-dt-7 col-mb-9 row direction-column center p-1" enctype="multipart/form-data" action="{{route('post.form', ['id'=>$post->id] )}}" method="POST">
                 @csrf
+                <label for="image">Imagem</label>
+                <img src="{{asset('storage/'.$post->image)}}" alt="{{$post->title}}" style="width: 200px">
+                <input type="file" name="image" id="image">
                 <label for="name">Nome</label>
                 <input type="text" id="title" name="title" value="{{$post->title}}" required>
                 <label for="name">Slug</label>

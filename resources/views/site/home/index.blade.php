@@ -20,7 +20,7 @@
         @foreach ($main_posts as $post)
             <article class=" col-dt-25 col-mb-5">
                 <a href="{{route( 'post',['slug'=>$post->slug] )}}" class="row direction-column center space-around m-1 card-post box-shadow">
-                    <img src="{{asset($post->image)}}" alt="{{$post->title}}">
+                    <img src="{{asset('storage/'.$post->image)}}" alt="{{$post->title}}">
                     <h3>{{$post->title}}</h3>
                 </a>
             </article>

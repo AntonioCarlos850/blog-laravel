@@ -18,7 +18,7 @@ button:hover{
 }
 
 form{
-    background-color: var(--gray);
+    background-color: var(--light-gray);
     border-radius: 8px;
 }
 
@@ -34,6 +34,7 @@ input{
     height: 2rem;
     border-radius: 4px;
     margin-bottom: .8rem;
+    border: .5px solid var(--gray);;
     transition: all .5s;
 }
 input:focus{
