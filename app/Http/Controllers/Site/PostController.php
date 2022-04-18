@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -93,6 +94,17 @@ class PostController extends Controller
         $post->category_id = $request->categoria;
 
         $post->save();
+
+        if($request->tags){
+            $ids = [];
+            foreach($request->tags as $tag){
+                $ids[] = $tag;
+            }
+
+            $tags = Tag::find($ids);
+            $post->tags()->attach($tags);
+        }
+
         return redirect()->route('post.edit', ['id'=>$post->id])->with('success', 'Post editado com sucesso');
     }
 
