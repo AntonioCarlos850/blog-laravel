@@ -12,3 +12,9 @@ h1{
     margin-bottom: 1.2rem;
     align-self: center;
 }
+
+@media screen and (max-width: 1000px){
+    #capa{
+        width: 100%;
+    }
+}

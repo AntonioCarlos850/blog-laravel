@@ -245,6 +245,14 @@ body{
     text-align: center;
 }
 
+.right{
+    justify-content:end;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+}
+
 .align-center{
     align-items: center;
 }
@@ -252,7 +260,7 @@ body{
 @media screen and (max-width: 1000px){
 
     .hidden-mobile{
-        display: none;
+        display: none !important;
     }
 
     .col-mb-1{
@@ -332,7 +340,7 @@ body{
     }
 
     .hidden-desktop{
-        display: none;
+        display: none !important;
     }
 
     .col-dt-1{

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
     <link rel="stylesheet" href="{{asset('css/footer.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{asset('js/navbar.js')}}"></script>
 
     @stack('styles')
     @stack('scripts')
@@ -22,32 +24,36 @@
 <body>
     <nav class="row w-100">
         <ul class="row space-between w-100">
-            <li>
+            <li class="col-dt-6">
                 <a href="{{route('index')}}"><img width="150px" src="{{asset('image/logo-crow.svg')}}" alt="logo escrito agência crow"></a>
             </li>
-            <li>
-                <a href="#">Categorias</a>
-            </li>
-            <li>
+            <li class="col-dt-2 row right hidden-mobile">
                 <a href="{{route('contact')}}">Contato</a>
             </li>
-            <li>
+            <li class="col-dt-2 row right hidden-mobile">
                 <a href="{{route('about')}}">Sobre</a>
             </li>
+            <div class="fit-content col-mb-4 row right hidden-desktop right" id="menu">
+                <i class="fa-solid fa-bars"></i>
+                <li class="hidden-desktop row direction-column" id="dropdown">
+                    <a href="{{route('contact')}}">Contato</a>
+                    <a href="{{route('about')}}">Sobre</a>
+                </li>
+            </div>
         </ul>
     </nav>
     <div id ='content'>
         @yield('content')
     </div>
-    <footer>
-        <ul>
-            <li>
+    <footer class="row w-100">
+        <ul class="row space-around align-center w-100">
+            <li class="col-dt-3 col-mb-5">
                 <a href="{{route('about')}}">Sobre</a>
             </li>
-            <li>
+            <li class="col-dt-3 col-mb-5">
                 <a href="{{route('contact')}}">Contato</a>
             </li>
-            <li>
+            <li class="col-dt-4 col-mb-10">
                 Redes Sociais:
                 <div class="row space-between px-1">
                     <a href="https://www.instagram.com/agenciacrow/"><img src="{{asset('image/instagram-logo.png')}}" width="30px" alt="logo instagram"></a>

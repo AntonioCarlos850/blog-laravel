@@ -12,9 +12,9 @@
         Fale Conosco
     </h1>
 </header>
-<div class="row w-100 center p-2">
-    <div class="row" id="internal-div">
-        <form action="{{route('contact.form')}}" method="POST" class="row center direction-column p-1 col-6" id="form-contact">
+<div class="row w-100 center p-1">
+    <div class="row col-dt-6 col-mb-10" id="internal-div">
+        <form action="{{route('contact.form')}}" method="POST" class="row center direction-column p-1 col-dt-6 col-mb-10" id="form-contact">
             @csrf
             @if(session('success'))
                 <div>
@@ -41,8 +41,8 @@
     
             <button type="submit">Enviar</button>
         </form>
-        <div id="texto-contato" class="col-4">
-            <p>
+        <div id="texto-contato" class="col-dt-4 col-mb-10">
+            <p class="p-1">
                 Aenean lorem sem, ornare eu semper in, gravida vitae ex. Etiam cursus gravida libero, eu malesuada purus
                 pellentesque vel. Vestibulum blandit rutrum ex non dictum. Aliquam non nibh eu quam facilisis pellentesque vitae
                 a tellus. 

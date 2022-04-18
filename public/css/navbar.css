@@ -1,3 +1,32 @@
+nav{
+    position: sticky;
+    z-index: 10;
+    left: 0;
+    top: 0;
+}
+
+nav i{
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+#dropdown{
+    position: fixed;
+    top: 65px;
+    right: 0;
+    background-color: var(--white);
+    border-radius: 0 0 4px 4px;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+}
+
+#dropdown a{
+    color: var(--black);
+    font-size: 1.5rem;
+    padding: .8rem;
+}
+
 nav ul{
     padding: .3rem 1.2rem;
     min-height: 10vh;
@@ -32,9 +61,3 @@ nav ul li a:hover{
 nav ul li a i{
     margin-right: .4rem;
 }
-
-/* @media screen and (min-width: 1000px){
-    nav div ul li{
-        min-width: 9.375rem;
-    }
-} */

@@ -79,6 +79,7 @@ h3{
     background-color: var(--blue);
     color: var(--white);
     align-items: center;
+    margin-bottom: .8rem;
     border-radius: 4px;
 }
 

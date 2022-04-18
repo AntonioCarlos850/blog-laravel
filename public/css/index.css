@@ -13,6 +13,7 @@ h1{
     font-size: 2rem;
     right: 5%;
     top: 25%;
+    text-shadow: 0 0 4px var(--light-yellow);
     color: var(--black);
 }
 
@@ -71,5 +72,17 @@ h2{
     }
     100%{
         transform: translate(0,0px);
+    }
+}
+
+@media screen and (max-width:1000px){
+    h1{
+        right: 0;
+        top: 12%;
+        padding-left: 4rem;
+    }
+
+    header{
+        background-position:20% 50%;
     }
 }
