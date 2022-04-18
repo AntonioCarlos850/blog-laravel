@@ -34,6 +34,12 @@
                 <input type="text" id="title" name="title" value="{{$post->title}}" required>
                 <label for="name">Slug</label>
                 <input type="text" id="slug" name="slug" value="{{$post->slug}}" required>
+                <label for="Categoria">Categoria</label>
+                <select name="categoria" id="categoria" required>
+                    @foreach ($categorias as $categoria)
+                        <option value="{{$categoria->id}}" {{($categoria->id == $post->category_id) ? 'selected' : ''}} >{{$categoria->name}}</option>
+                    @endforeach
+                </select>
                 <label for="name">Conteudo</label>
                 <textarea id="content" name="content" cols="30" rows="10" required>
                     {{$post->content}}

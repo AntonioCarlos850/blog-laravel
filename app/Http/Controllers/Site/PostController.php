@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -40,7 +41,12 @@ class PostController extends Controller
     public function editPage($id)
     {
         $post = Post::where('id', $id)->first();
-        return view('panel.post.edit', ['post' => $post]);
+        $categorias = Category::orderBy('id')->get();
+
+        return view('panel.post.edit', [
+            'post' => $post,
+            'categorias'=>$categorias
+        ]);
     }
 
 
@@ -84,7 +90,7 @@ class PostController extends Controller
 
         $post->slug = $request->input('slug');
         $post->content = $request->input('content');
-        // $post->category_id = $request->input('category_id');
+        $post->category_id = $request->categoria;
 
         $post->save();
         return redirect()->route('post.edit', ['id'=>$post->id])->with('success', 'Post editado com sucesso');
