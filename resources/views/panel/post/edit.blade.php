@@ -1,6 +1,6 @@
 @extends('layouts.panel')
 @push('styles')
-    <link rel="stylesheet" href="{{asset('css/product-panel.css')}}">
+    <link rel="stylesheet" href="{{asset('css/post-panel.css')}}">
 @endpush
 @push('pagina')
     Post {{$post->title}}
