@@ -43,10 +43,13 @@ class PostController extends Controller
     {
         $post = Post::where('id', $id)->first();
         $categorias = Category::orderBy('id')->get();
+        $tags = Tag::orderBy('id')->get();
 
         return view('panel.post.edit', [
             'post' => $post,
-            'categorias'=>$categorias
+            'categorias'=>$categorias,
+            'tags'=>$tags,
+            'ids_selecionados'=>[]
         ]);
     }
 
@@ -95,12 +98,12 @@ class PostController extends Controller
 
         $post->save();
 
-        if($request->tags){
+        $post->tags()->detach();
+        if($request->input('tags')){
             $ids = [];
-            foreach($request->tags as $tag){
+            foreach($request->input('tags') as $tag){
                 $ids[] = $tag;
             }
-
             $tags = Tag::find($ids);
             $post->tags()->attach($tags);
         }

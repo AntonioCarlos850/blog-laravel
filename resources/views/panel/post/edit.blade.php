@@ -40,6 +40,18 @@
                         <option value="{{$categoria->id}}" {{($categoria->id == $post->category_id) ? 'selected' : ''}} >{{$categoria->name}}</option>
                     @endforeach
                 </select>
+                <div id="div-tags">
+                    @foreach ($post->tags as $tag)
+                    @php
+                        $ids_selecionados[] = $tag->id;
+                    @endphp
+                    @endforeach
+
+                    @foreach ($tags as $tag)
+                        <input type="checkbox" name="tags[]" id="tag{{$tag->id}}" value="{{$tag->id}}" {{in_array($tag->id,$ids_selecionados) ? 'checked' : ''}}>
+                        <label for="tag{{$tag->id}}">{{$tag->name}}</label>
+                    @endforeach
+                </div>
                 <label for="name">Conteudo</label>
                 <textarea id="content" name="content" cols="30" rows="10" required>
                     {{$post->content}}
