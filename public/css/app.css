@@ -8,12 +8,15 @@
 
     --black: #000e22;
     --white: #FAFAFA;
-    --light-gray: #DDDDDD;
+    --light-gray: #f2f2f2;
     --gray: #BBBBBB;
     --dark-gray: #999999;
     --very-dark-gray: #333333;
     --red: #E40852;
+    --blue: #336699;
+    --green: #33994d;
     --yellow: #ffff00;
+    --yellow2: #ecec13;
     --light-yellow: #fcfcc4;
 }
 
@@ -58,8 +61,16 @@ body{
     flex-wrap: wrap;
 }
 
+.fit-content{
+    height: fit-content;
+}
+
 .direction-column{
     flex-direction: column;
+}
+
+.row-reverse{
+    flex-direction: row-reverse;
 }
 
 .rounded{
@@ -232,6 +243,10 @@ body{
     align-self: center;
     align-content: center;
     text-align: center;
+}
+
+.align-center{
+    align-items: center;
 }
 
 @media screen and (max-width: 1000px){

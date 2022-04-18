@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function login()
     {
-        return view('panel.user.login');
+        return view('site.user.login');
     }
 
     /**

@@ -16,8 +16,8 @@ class PostController extends Controller
      */
     public function index($slug)
     {
-        $post = Post::where('slug',$slug)->first();
-        return view('site.post.index',['post'=>$post]);
+        $post = Post::where('slug', $slug)->first();
+        return view('site.post.index', ['post' => $post]);
     }
 
     /**
@@ -37,23 +37,32 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function panelPost($slug)
+    public function editPage($id)
     {
-        $post = Post::where('slug',$slug)->first();
-        return view('site.post.index',['post'=>$post]);
+        $post = Post::where('id', $id)->first();
+        return view('panel.post.edit', ['post' => $post]);
     }
 
-    
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        Post::create($request->all());
-        
-        return redirect()->route('post.panel')->with('success','Formulário enviado com sucesso');
+        $post = Post::create([
+            'title' => 'Novo Post',
+            'image' => '',
+            'slug' => 'novo-post' . random_int(0, 9999),
+            'content' => '',
+            'user_id' => 1,
+            'category_id' => 1,
+        ]);
+
+        return redirect()->route('post.edit', [
+            'id' => $post->id
+        ]);
     }
 
     /**
@@ -63,17 +72,18 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function edit(Request $request, $id)
     {
         $post = Post::find($id);
- 
+
         $post->title = $request->input('title');
-        $post->image = $request->input('image');
+        // $post->image = $request->input('image');
         $post->slug = $request->input('slug');
         $post->content = $request->input('content');
-        $post->category_id = $request->input('category_id');
-        
+        // $post->category_id = $request->input('category_id');
+
         $post->save();
+        return redirect()->route('post.edit', ['id'=>$post->id])->with('success', 'Post editado com sucesso');
     }
 
     /**
@@ -82,10 +92,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
         $post = Post::find($id);
- 
+
         $post->delete();
+        return redirect()->route('painel');
     }
 }

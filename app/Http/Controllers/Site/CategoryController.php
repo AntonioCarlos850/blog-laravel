@@ -29,15 +29,31 @@ class CategoryController extends Controller
     }
 
     /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function editPage($id)
+    {
+        $categoria = Category::where('id', $id)->first();
+        return view('panel.category.edit', ['categoria' => $categoria]);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        Category::create($request->all());
-        
-        return redirect()->route('category.panel')->with('success','Formulário enviado com sucesso');
+        $category = Category::create([
+            'name' => 'Nova Categoria'
+        ]);
+
+        return redirect()->route('category.edit', [
+            'id' => $category->id
+        ]);
     }
 
     /**
@@ -47,13 +63,14 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function edit(Request $request, $id)
     {
         $category = Category::find($id);
- 
+
         $category->name = $request->input('name');
-        
+
         $category->save();
+        return redirect()->route('category.edit',['id'=>$category->id])->with('success', 'Categoria editada com sucesso');
     }
 
     /**
@@ -62,10 +79,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
         $category = Category::find($id);
- 
+
         $category->delete();
+        return redirect()->route('painel');
     }
 }

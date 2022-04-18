@@ -1,29 +1,18 @@
-nav{
-    width: 100%;
-}
-
-nav div{
-    width: 100%;
-}
-
-nav div ul{
-    width: 100%;
+nav ul{
     padding: .3rem 1.2rem;
-    height: 10vh;
-    display: flex;
-    justify-content: space-between;
+    min-height: 10vh;
     align-items: center;
     background-color: var(--very-dark-gray);
 }
 
-nav div ul li{
+nav ul li{
     list-style:none;
     display: flex;
     text-align: center;
     align-items: center;
 }
 
-nav div ul li a{
+nav ul li a{
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--white);
@@ -34,23 +23,18 @@ nav div ul li a{
     transition: all 0.2s;
 }
 
-nav div ul li a:hover{
+nav ul li a:hover{
     text-decoration: underline;
     text-underline-offset: 1px;
     color: var(--red);
 }
 
-@media screen and (min-width: 1000px){
+nav ul li a i{
+    margin-right: .4rem;
+}
+
+/* @media screen and (min-width: 1000px){
     nav div ul li{
         min-width: 9.375rem;
     }
-}
-
-@media screen and (max-width: 1000px){
-    nav div ul{
-        display: none;
-        width: 0;
-        margin: 0;
-        padding: 0;
-    }
-}
+} */

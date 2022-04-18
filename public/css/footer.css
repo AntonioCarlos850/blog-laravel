@@ -4,7 +4,7 @@ footer{
     background-color: var(--very-dark-gray);
 }
 
-ul{
+footer ul{
     width: 100%;
     padding: .3rem 1.2rem;
     height: 10vh;
@@ -14,7 +14,7 @@ ul{
     background-color: var(--very-dark-gray);
 }
 
-ul li{
+footer ul li{
     font-size: 1.1rem;
     color: var(--white);
     list-style:none;
@@ -23,7 +23,7 @@ ul li{
     align-items: center;
 }
 
-ul li a{
+footer ul li a{
     color: var(--white);
     padding: .2rem;
     text-decoration: none;
@@ -33,18 +33,18 @@ ul li a{
     transition: all 0.2s;
 }
 
-ul li a:hover{
+footer ul li a:hover{
     text-decoration: underline;
     text-underline-offset: 1px;
     color: var(--red);
 }
 
 @media screen and (min-width: 1000px){
-    ul li{
+    footer ul li{
         min-width: 7.5rem;
     }
     
-    ul li div{
+    footer ul li div{
         min-width: 7rem;
     }
 }

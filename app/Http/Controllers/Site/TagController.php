@@ -28,11 +28,32 @@ class TagController extends Controller
         return view('panel.tag.index');
     }
 
-    public function create(Request $request)
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function editPage($id)
     {
-        Tag::create($request->all());
-        
-        return redirect()->route('tag.panel')->with('success','Formulário enviado com sucesso');
+        $tag = Tag::where('id', $id)->first();
+        return view('panel.tag.edit', ['tag' => $tag]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $tag = Tag::create([
+            'name' => 'Nova Tag'
+        ]);
+
+        return redirect()->route('tag.edit', [
+            'id' => $tag->id
+        ]);
     }
 
     /**
@@ -42,13 +63,14 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function edit(Request $request, $id)
     {
         $tag = Tag::find($id);
- 
+
         $tag->name = $request->input('name');
-        
+
         $tag->save();
+        return redirect()->route('tag.edit',['id'=>$tag->id])->with('success', 'Tag editada com sucesso');
     }
 
     /**
@@ -57,10 +79,11 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
         $tag = Tag::find($id);
- 
+
         $tag->delete();
+        return redirect()->route('painel');
     }
 }

@@ -20,23 +20,21 @@
     <title>Blog | @stack('pagina')</title>
 </head>
 <body>
-    <nav>
-        <div>
-            <ul>
-                <li>
-                    <a href="{{route('index')}}"><img width="150px" src="{{asset('image/logo-crow.svg')}}" alt="logo escrito agência crow"></a>
-                </li>
-                <li>
-                    <a href="#">Categorias</a>
-                </li>
-                <li>
-                    <a href="{{route('contact')}}">Contato</a>
-                </li>
-                <li>
-                    <a href="{{route('about')}}">Sobre</a>
-                </li>
-            </ul>
-        </div>
+    <nav class="row w-100">
+        <ul class="row space-between w-100">
+            <li>
+                <a href="{{route('index')}}"><img width="150px" src="{{asset('image/logo-crow.svg')}}" alt="logo escrito agência crow"></a>
+            </li>
+            <li>
+                <a href="#">Categorias</a>
+            </li>
+            <li>
+                <a href="{{route('contact')}}">Contato</a>
+            </li>
+            <li>
+                <a href="{{route('about')}}">Sobre</a>
+            </li>
+        </ul>
     </nav>
     <div id ='content'>
         @yield('content')
